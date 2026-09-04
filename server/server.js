@@ -3,7 +3,7 @@ const cors = require("cors");
 
 const app = express();
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 // ==========================
 // MIDDLEWARE
@@ -69,12 +69,7 @@ app.get("/api/crops", (req, res) => {
 // ==========================
 
 app.post("/api/crops", (req, res) => {
-  const {
-    crop,
-    quantity,
-    price,
-    location,
-  } = req.body;
+  const { crop, quantity, price, location } = req.body;
 
   if (!crop || !quantity || !price) {
     return res.status(400).json({
@@ -107,9 +102,7 @@ app.post("/api/crops", (req, res) => {
 app.delete("/api/crops/:id", (req, res) => {
   const id = Number(req.params.id);
 
-  const crop = crops.find(
-    (item) => item.id === id
-  );
+  const crop = crops.find((item) => item.id === id);
 
   if (!crop) {
     return res.status(404).json({
@@ -118,9 +111,7 @@ app.delete("/api/crops/:id", (req, res) => {
     });
   }
 
-  crops = crops.filter(
-    (item) => item.id !== id
-  );
+  crops = crops.filter((item) => item.id !== id);
 
   res.json({
     success: true,
@@ -142,12 +133,7 @@ app.post("/api/requests", (req, res) => {
     location,
   } = req.body;
 
-  if (
-    !cropId ||
-    !crop ||
-    !buyer ||
-    !requestedQuantity
-  ) {
+  if (!cropId || !crop || !buyer || !requestedQuantity) {
     return res.status(400).json({
       success: false,
       message: "Please provide all required details.",
@@ -192,9 +178,7 @@ app.get("/api/requests", (req, res) => {
 app.put("/api/requests/:id/accept", (req, res) => {
   const id = Number(req.params.id);
 
-  const request = requests.find(
-    (item) => item.id === id
-  );
+  const request = requests.find((item) => item.id === id);
 
   if (!request) {
     return res.status(404).json({
@@ -219,9 +203,7 @@ app.put("/api/requests/:id/accept", (req, res) => {
 app.put("/api/requests/:id/reject", (req, res) => {
   const id = Number(req.params.id);
 
-  const request = requests.find(
-    (item) => item.id === id
-  );
+  const request = requests.find((item) => item.id === id);
 
   if (!request) {
     return res.status(404).json({
@@ -244,10 +226,10 @@ app.put("/api/requests/:id/reject", (req, res) => {
 // ==========================
 
 app.listen(PORT, () => {
-  console.log("");
   console.log("================================");
   console.log("🌱 KISAN SETU BACKEND");
   console.log("================================");
-  console.log(`🚀 Server: http://localhost:${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
   console.log("================================");
 });
+
