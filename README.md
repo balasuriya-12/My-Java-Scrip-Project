@@ -1,16 +1,62 @@
-# React + Vite
+# 🌱 Kisan Setu – Farmer Procurement Bridge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 About the Project
 
-Currently, two official plugins are available:
+**Kisan Setu** is a digital platform designed to connect farmers
+directly with buyers, markets, and procurement opportunities.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+It provides a simple and user-friendly interface where farmers can
+find better selling opportunities and buyers can discover agricultural
+products.
 
-## React Compiler
+## 🎯 Objective
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The main objective of Kisan Setu is to create a digital bridge between
+farmers and buyers and help improve access to market opportunities.
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 👨‍🌾 Farmer registration
+- 🛒 Buyer access
+- 📊 Market information
+- 🍅 Crop price information
+- 📱 Mobile number and OTP interface
+- 🤝 Farmer–buyer connection
+- 🌱 Simple and user-friendly interface
+- 📈 Procurement opportunities
+
+## 🛠️ Technologies Used
+
+- **React.js**
+- **JavaScript**
+- **HTML5**
+- **CSS3**
+- **Vite**
+- **Node.js**
+- **Express.js**
+
+## 📂 Project Structure
+
+```text
+Kisan Setu
+│
+├── public/
+│
+├── server/
+│   ├── package.json
+│   ├── package-lock.json
+│   └── server.js
+│
+├── src/
+│   ├── assets/
+│   ├── App.jsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.jsx
+│
+├── .gitignore
+├── index.html
+├── package.json
+├── package-lock.json
+├── README.md
+└── vite.config.js
